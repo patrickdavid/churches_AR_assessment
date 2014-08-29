@@ -1,3 +1,3 @@
-class Church < ActiveRecord::Base
-  belongs_to :parish
+class Parishioner < ActiveRecord::Base
+  belongs_to :church
 end
