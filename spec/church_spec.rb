@@ -13,7 +13,7 @@ describe Church do
     expect(new_church.save).to eq false
   end
   
-  it "lists parishioners of a aprticular church" do
+  it "lists parishioners of a particular church" do
     church1 = Church.create({:name => 'St. John the Apostle'})
     church2 = Church.create({:name => 'St. John the Baptist'})
     member = Parishioner.create(:name => "Fr. Mark", :church_id =>church1.id)
