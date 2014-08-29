@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: church_development
+
+test:
+  adapter: postgresql
+  database: church_test
