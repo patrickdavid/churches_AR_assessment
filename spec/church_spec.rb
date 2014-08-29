@@ -7,4 +7,9 @@ describe Church do
     new_member1 = Parishioner.create({:name => "Scott", :church_id => new_church.id})
     new_church.parishioners.should eq [new_member, new_member1]
   end
+  
+  it "validates the presence of name" do
+    new_church = Church.create({:name => ''})
+    expect(Church.all).to eq []
+  end
 end
