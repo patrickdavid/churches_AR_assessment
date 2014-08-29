@@ -4,6 +4,8 @@ class Parishioner < ActiveRecord::Base
   
   belongs_to :church
   
+  validates :name, presence: true
+  
 private
   
   def capitalize_name
