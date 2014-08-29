@@ -5,6 +5,7 @@ class Parishioner < ActiveRecord::Base
   belongs_to :church
   
   validates :name, presence: true
+  validates :church_id, presence: true
   
 private
   

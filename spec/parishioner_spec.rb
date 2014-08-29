@@ -16,4 +16,9 @@ describe Parishioner do
     new_member = Parishioner.create({:name => ''})
     expect(new_member.save).to eq false
   end
+  
+  it "validates the presence of a church id" do
+    new_member = Parishioner.create({:name => 'Joe', :church_id =>''})
+    expect(new_member.save).to eq false
+  end
 end
