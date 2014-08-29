@@ -10,6 +10,15 @@ describe Church do
   
   it "validates the presence of name" do
     new_church = Church.create({:name => ''})
-    expect(Church.all).to eq []
+    expect(new_church.save).to eq false
+  end
+  
+  it "lists parishioners of a aprticular church" do
+    church1 = Church.create({:name => 'St. John the Apostle'})
+    church2 = Church.create({:name => 'St. John the Baptist'})
+    member = Parishioner.create(:name => "Fr. Mark", :church_id =>church1.id)
+    member1 = Parishioner.create(:name => "Pat", :church_id =>church1.id)
+    member2 = Parishioner.create(:name => "Fr. Dan", :church_id =>church2.id)
+    expect(church1.parish_members).to eq ["Name: Fr. Mark", "Name: Pat"]
   end
 end
