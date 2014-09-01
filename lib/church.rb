@@ -10,4 +10,5 @@ class Church < ActiveRecord::Base
     end
     members
   end
+  
 end

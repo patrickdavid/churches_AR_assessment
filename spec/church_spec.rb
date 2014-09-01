@@ -20,5 +20,5 @@ describe Church do
     member1 = Parishioner.create(:name => "Pat", :church_id =>church1.id)
     member2 = Parishioner.create(:name => "Fr. Dan", :church_id =>church2.id)
     expect(church1.parish_members).to eq ["Name: Fr. Mark", "Name: Pat"]
-  end
+  end 
 end
